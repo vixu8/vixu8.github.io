@@ -37,21 +37,21 @@ function Lights () {
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.position.copy(camera.position.clone().add(new THREE.Vector3(0,0,25)).multiplyScalar(-1))
+      ref.current.position.copy(camera.position.clone().add(new THREE.Vector3(2, 4, -2)))
     }
     if (ref2.current) {
-      ref2.current.position.copy(camera.position.clone().add(new THREE.Vector3(0,0,25)).multiplyScalar(-1))
+      ref2.current.position.copy(camera.position.clone().add(new THREE.Vector3(-2,-4,2)))
     }
   })
 
   return <>
-          <directionalLight ref={ref} color="white" intensity={.5}/>
+          <directionalLight ref={ref} color="gray" intensity={.5}/>
           <directionalLight ref={ref2} color="rgb(245,237,225)" intensity={1}/>
 
-          {ref.current && console.log("hello??", ref.current.position) && (
+          {ref.current && (
             <directionalLightHelper args={[ref.current, 2, 0xff0000]} />
           )}
-          {ref2.current && console.log("h", ref2.current.position, ref2.current.position.sub(camera.position)) && (
+          {ref2.current && (
             <directionalLightHelper args={[ref2.current, 2, 0xff0000]} />
           )}
         </>
@@ -76,7 +76,7 @@ function App() {
   return (
     <div id="canvas-container">
       <Canvas 
-        orthographic camera={{position: [0, 10, 25], left: -aspect*viewSize/2, right:aspect*viewSize/2, top:viewSize/2, bottom:-viewSize/2, zoom: 1} }
+        orthographic camera={{position: [0, 5, 25], left: -aspect*viewSize/2, right:aspect*viewSize/2, top:viewSize/2, bottom:-viewSize/2, zoom: 1} }
         // camera={{ fov: 50, near: 0.1, far: 1000, position: [0, 0, 100] }}
       >
         <ambientLight intensity={.1} />
