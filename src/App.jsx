@@ -1,11 +1,7 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { Canvas, useThree, useFrame} from '@react-three/fiber'
 import * as THREE from 'three'
 import './App.css'
 import { useRef, useState } from 'react';
-// import { DirectionalLight } from 'three';
 import { Stats, OrbitControls } from '@react-three/drei'
 
 function Globe() {
