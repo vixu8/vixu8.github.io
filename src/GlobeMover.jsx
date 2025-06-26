@@ -42,7 +42,7 @@ function Lights () {
 
   return <>
           <directionalLight ref={ref} color="rgb(108, 108, 108)" intensity={.5}/>
-          <directionalLight ref={ref2} color="rgb(249, 249, 221)" intensity={1}/>
+          <directionalLight ref={ref2} color="rgb(249, 246, 221)" intensity={1}/>
 
           {/* {ref.current && (
             <directionalLightHelper args={[ref.current, 2, 0xff0000]} />
@@ -58,14 +58,14 @@ class GlobeMover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      aspect: window.innerWidth / (0.85 * window.innerHeight),
+      aspect: window.innerWidth / (0.9 * window.innerHeight),
     };
     this.handleResize = this.handleResize.bind(this);
   }
 
   handleResize() {
     this.setState({
-      aspect: window.innerWidth / (0.85 * window.innerHeight),
+      aspect: window.innerWidth / (0.9 * window.innerHeight),
     });
   }
 
@@ -78,11 +78,11 @@ class GlobeMover extends React.Component {
   }
 
   render() {
-    const viewSize = 75;
+    const viewSize = 65;
     const { aspect } = this.state;
 
     return <>
-      <div style={{position: 'absolute', marginTop: '25vh', marginLeft: '15vw'}}>
+      <div style={{position: 'absolute', marginTop: '25vh', marginLeft: '20vw'}}>
         <h1>Viola Xu</h1>
         <h3 style={{width: '180px', whitespace: 'pre-wrap'}}>Computer Science @ Carnegie Mellon</h3>
       </div>
