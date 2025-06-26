@@ -20,7 +20,7 @@ function Globe() {
     ref={meshRef}
     material={globeFaces}
     >
-      <boxGeometry args={[25,25,25]} />
+      <boxGeometry args={[15,15,15]} />
        
   </mesh>
 
@@ -41,8 +41,8 @@ function Lights () {
   })
 
   return <>
-          <directionalLight ref={ref} color="gray" intensity={.5}/>
-          <directionalLight ref={ref2} color="rgb(245,237,225)" intensity={1}/>
+          <directionalLight ref={ref} color="rgb(108, 108, 108)" intensity={.5}/>
+          <directionalLight ref={ref2} color="rgb(249, 249, 221)" intensity={1}/>
 
           {/* {ref.current && (
             <directionalLightHelper args={[ref.current, 2, 0xff0000]} />
@@ -58,14 +58,14 @@ class GlobeMover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      aspect: window.innerWidth / (0.6 * window.innerHeight),
+      aspect: window.innerWidth / (0.85 * window.innerHeight),
     };
     this.handleResize = this.handleResize.bind(this);
   }
 
   handleResize() {
     this.setState({
-      aspect: window.innerWidth / (0.6 * window.innerHeight),
+      aspect: window.innerWidth / (0.85 * window.innerHeight),
     });
   }
 
@@ -82,11 +82,11 @@ class GlobeMover extends React.Component {
     const { aspect } = this.state;
 
     return <>
-      <div style={{position: 'absolute', marginTop: '50px', marginLeft: '90px'}}>
+      <div style={{position: 'absolute', marginTop: '25vh', marginLeft: '15vw'}}>
         <h1>Viola Xu</h1>
-        <h3 style={{width: '350px', overflow: 'wrap'}}>Computer Science @ Carnegie Mellon</h3>
+        <h3 style={{width: '180px', whitespace: 'pre-wrap'}}>Computer Science @ Carnegie Mellon</h3>
       </div>
-      <div id="canvas-container" style={{marginLeft: '50px'}}>
+      <div id="canvas-container">
         <Canvas
           key={aspect}
           orthographic
@@ -99,7 +99,7 @@ class GlobeMover extends React.Component {
             zoom: 1.25,
           }}
         >
-          <ambientLight intensity={.1} />
+          {/* <ambientLight intensity={.1} /> */}
 
           <Lights />
           <Globe />
