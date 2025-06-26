@@ -81,8 +81,12 @@ class GlobeMover extends React.Component {
     const viewSize = 75;
     const { aspect } = this.state;
 
-    return (
-      <div id="canvas-container">
+    return <>
+      <div style={{position: 'absolute', marginTop: '50px', marginLeft: '90px'}}>
+        <h1>Viola Xu</h1>
+        <h3 style={{width: '350px', overflow: 'wrap'}}>Computer Science @ Carnegie Mellon</h3>
+      </div>
+      <div id="canvas-container" style={{marginLeft: '50px'}}>
         <Canvas
           key={aspect}
           orthographic
@@ -113,7 +117,7 @@ class GlobeMover extends React.Component {
 
         </Canvas>
       </div>
-    );
+    </>
   }
 
 }
