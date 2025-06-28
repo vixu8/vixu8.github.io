@@ -30,17 +30,17 @@ class Home extends React.Component {
       <hr />
 
       {this.renderRecentProject("1/2025","CMU CS Academy: Software Engineering Intern",
-      "blahblahblah, blublublu",null, 'src/assets/africa2.png')}
+      "blahblahblah, blublublu",null, './assets/africa2.png')}
 
       <hr />
 
       {this.renderRecentProject("11/2024","15-112 Term Project: Rhythm Maker",
-      "blahblahblah, blublublu",null, 'src/assets/africa2.png')}
+      "blahblahblah, blublublu",null, './assets/africa2.png')}
 
       <hr />
 
       {this.renderRecentProject("11/2024","Hack112: Stopdot",
-      "blahblahblah, blublublu",null, 'src/assets/africa2.png')}
+      "blahblahblah, blublublu",null, './assets/africa2.png')}
 
     </div>
 
