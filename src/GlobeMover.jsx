@@ -8,12 +8,12 @@ function Globe() {
   const meshRef = useRef();
   const loader = new THREE.TextureLoader();
   const globeFaces = [
-    new THREE.MeshStandardMaterial({ map: loader.load('./assets/africa2.png'), side: THREE.DoubleSide }), //right
-    new THREE.MeshStandardMaterial({ map: loader.load('./assets/pacific2.png'), side: THREE.DoubleSide }), //left
-    new THREE.MeshStandardMaterial({ map: loader.load('./assets/north2.png'), side: THREE.DoubleSide }), //top
-    new THREE.MeshStandardMaterial({ map: loader.load('./assets/antarctica2.png'), side: THREE.DoubleSide }), //bottom
-    new THREE.MeshStandardMaterial({ map: loader.load('./assets/america2.png'), side: THREE.DoubleSide }), //front
-    new THREE.MeshStandardMaterial({ map: loader.load('./assets/asia2.png'), side: THREE.DoubleSide }), //back
+    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/africa2.png'), side: THREE.DoubleSide }), //right
+    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/pacific2.png'), side: THREE.DoubleSide }), //left
+    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/north2.png'), side: THREE.DoubleSide }), //top
+    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/antarctica2.png'), side: THREE.DoubleSide }), //bottom
+    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/america2.png'), side: THREE.DoubleSide }), //front
+    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/asia2.png'), side: THREE.DoubleSide }), //back
   ]
 
   return <mesh
