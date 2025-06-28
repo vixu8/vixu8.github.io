@@ -1,19 +1,19 @@
 import { Canvas, useThree, useFrame} from '@react-three/fiber'
 import * as THREE from 'three'
 import { useRef } from 'react';
-import React from 'react';
-import { Stats, OrbitControls } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
+import React from 'react'
 
 function Globe() {
   const meshRef = useRef();
   const loader = new THREE.TextureLoader();
   const globeFaces = [
-    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/africa2.png'), side: THREE.DoubleSide }), //right
-    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/pacific2.png'), side: THREE.DoubleSide }), //left
-    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/north2.png'), side: THREE.DoubleSide }), //top
-    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/antarctica2.png'), side: THREE.DoubleSide }), //bottom
-    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/america2.png'), side: THREE.DoubleSide }), //front
-    new THREE.MeshStandardMaterial({ map: loader.load('./src/assets/asia2.png'), side: THREE.DoubleSide }), //back
+    new THREE.MeshStandardMaterial({ map: loader.load('/africa2.png'), side: THREE.DoubleSide }), //right
+    new THREE.MeshStandardMaterial({ map: loader.load('/pacific2.png'), side: THREE.DoubleSide }), //left
+    new THREE.MeshStandardMaterial({ map: loader.load('/north2.png'), side: THREE.DoubleSide }), //top
+    new THREE.MeshStandardMaterial({ map: loader.load('/antarctica2.png'), side: THREE.DoubleSide }), //bottom
+    new THREE.MeshStandardMaterial({ map: loader.load('/america2.png'), side: THREE.DoubleSide }), //front
+    new THREE.MeshStandardMaterial({ map: loader.load('/asia2.png'), side: THREE.DoubleSide }), //back
   ]
 
   return <mesh
@@ -82,7 +82,7 @@ class GlobeMover extends React.Component {
     const { aspect } = this.state;
 
     return <>
-      <div style={{position: 'absolute', marginTop: '25vh', marginLeft: '20vw'}}>
+      <div style={{position: 'absolute', marginTop: '25vh', marginLeft: '20vw', zIndex: '2'}}>
         <h1>Viola Xu</h1>
         <h3 style={{width: '180px', whitespace: 'pre-wrap'}}>Computer Science @ Carnegie Mellon</h3>
       </div>
