@@ -84,7 +84,7 @@ function Globe() {
     <mesh
       ref={meshRef}
       material={globeFaces}
-      position={[8, -2.5, 0]}
+      position={[0, -5, 0]}
     >
       <boxGeometry args={[15, 15, 15]} />
     </mesh>
@@ -127,9 +127,9 @@ class GlobeMover extends React.Component {
     const { aspect } = this.state;
 
     return <>
-      <div style={{position: 'absolute', marginTop: '20vh', marginLeft: '30vw', zIndex: '2'}}>
-        <h1>Viola Xu</h1>
-        <h3 style={{width: '180px', whitespace: 'pre-wrap'}}>Computer Science @ Carnegie Mellon</h3>
+      <div style={{position: 'absolute', marginTop: '15vh', marginLeft: '30vw', zIndex: '2'}}>
+        <h1 style={{marginBottom: '10px'}}>Viola Xu</h1>
+        <h3 style={{marginTop: '0px', whitespace: 'pre-wrap'}}>Computer Science @ Carnegie Mellon</h3>
       </div>
       <div id="canvas-container">
         <Canvas
