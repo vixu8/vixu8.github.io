@@ -12,17 +12,17 @@ class NavBar extends React.Component {
                     <li style={{ flex: '0' }}>
                         <a href="/" ><img src={darkFancy} alt={"logo"} style={{height: '100%', width: 'auto'}}/></a>
                     </li>
-                    <li style={{ flex: '1' }}>
+                    {/* <li style={{ flex: '1' }}>
                         <a href="/projects" style={{ color: '#fff', lineHeight: '60px' }}>PROJECTS</a>
-                    </li>
-                    <li style={{ flex: '1'  }}>
+                    </li> */}
+                    {/* <li style={{ flex: '1'  }}>
                         <a href="/play" style={{ color: '#fff', lineHeight: '60px'}}>PLAY</a>
-                    </li>
+                    </li> */}
                     <li style={{ flex: '1'  }}>
                         <a href="/about" style={{ color: '#fff', lineHeight: '60px' }}>ABOUT</a>
                     </li>
                     <li style={{ flex: '1' }}>
-                        <a href="/resume" style={{ color: '#fff', textDecoration: 'underline', lineHeight: '60px'}}>RESUME</a>
+                        <a href="https://drive.google.com/file/d/11WTMr663LAnXoa2eGh9ZGmYsF2OYavYR/view?usp=sharing" target="_blank" style={{ color: '#fff', textDecoration: 'underline', lineHeight: '60px'}}>RESUME</a>
                     </li>
                 </ul>
         </nav>

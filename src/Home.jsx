@@ -1,7 +1,6 @@
 import './App.css'
 import React from 'react'
 import GlobeMover from './GlobeMover'
-import darkFancy from '../public/darkFancy.png'
 import popoutArrow from './assets/arrow.svg'
 import rhythmMaker from './assets/rhythmMakerDemo.png'
 import stopdot from './assets/stopdotDemo.png'
@@ -21,7 +20,7 @@ class Home extends React.Component {
         </div>
 
         <div style={{marginLeft: '20px', display: 'flex', justifyContent: 'flex-end', flexShrink: 0}}>
-          <img src={image ? image : darkFancy} alt={projectName} style={{height: '45vh', width: '40vw', objectFit: 'contain',borderRadius: '8px'}} />
+          <img src={image ? image : "/darkFancy.png"} alt={projectName} style={{height: '45vh', width: '40vw', objectFit: 'contain',borderRadius: '8px'}} />
           {link && (
             <a href={link} target="_blank" rel="noopener noreferrer" style={{color: '#007bff', position: 'absolute', padding: '10px'}}><img src={popoutArrow} alt={'View Project Page'}/></a>
           )}
