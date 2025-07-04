@@ -134,7 +134,7 @@ class GlobeMover extends React.Component {
         <h3 style={{marginTop: '0px', marginBottom: '0px', whitespace: 'pre-wrap'}}>Computer Science</h3>
         <h3 style={{marginTop: '0px'}}> @ Carnegie Mellon</h3>
       </div>
-      <img src={gradient} alt={''} style={{position: 'absolute', marginLeft: '-20vw', marginTop: '10vh'}}/>
+      <img src={gradient} alt={''} style={{position: 'absolute', marginLeft: '-20vw', marginTop: '10vh', width: '50vw'}}/>
       <div id="canvas-container">
         <Canvas
           key={aspect}
