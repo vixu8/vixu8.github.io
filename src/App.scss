@@ -8,6 +8,15 @@
   letter-spacing: -0.03em;
 }
 
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:#bcbcbc;
+  height: 1px;
+}
+
 .section {
   display: flex;
   flex-flow: column;

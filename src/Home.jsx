@@ -1,40 +1,39 @@
-import './App.scss'
-import './Home.scss'
+import "./App.scss";
+import "./Home.scss";
 
-import React from 'react'
-import GlobeMover from './GlobeMover'
-import popoutArrow from './assets/arrow.svg'
-import rhythmMaker from './assets/rhythmMakerDemo.png'
-import stopdot from './assets/stopdotDemo.png'
-
+import React from "react";
+import GlobeMover from "./GlobeMover";
+import popoutArrow from "./assets/arrow.svg";
+import rhythmMaker from "./assets/rhythmMakerDemo.png";
+import stopdot from "./assets/stopdotDemo.png";
 
 class Home extends React.Component {
-  renderRecentProject(date, projectName, description, link = null, image) {
+  renderRecentProject(date, projectName, description, image, link = null) {
     return (
-      <div className="recent-project-container">
-        <div className="recent-project-info">
-          <div className="recent-project-header">
-            <p className="recent-project-date">{date}</p>
-            <p className="recent-project-title">{projectName}</p>
+      <div className="project-container">
+        <div className="project-info">
+          <div className="project-header">
+            <p className="date">{date}</p>
+            <p className="title">{projectName}</p>
           </div>
           <hr />
-          <div className="recent-project-description">{description}</div>
+          <div className="project-description">{description}</div>
         </div>
 
-        <div className="recent-project-image-container">
+        <div className="project-image-container">
           <img
             src={image ? image : "/darkFancy.png"}
             alt={projectName}
-            className="recent-project-image"
+            className="image"
           />
           {link && (
             <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="recent-project-link"
+              className="link"
             >
-              <img src={popoutArrow} alt={'View Project Page'} />
+              <img src={popoutArrow} alt={"View Project Page"} />
             </a>
           )}
         </div>
@@ -51,8 +50,8 @@ class Home extends React.Component {
         "11/2024",
         "15-112 Term Project: Rhythm Maker",
         "Create, save, and play your own beatmaps for a collection of songs in Rhythm Maker!",
-        "https://github.com/vixu8/112-term-project",
-        rhythmMaker
+        rhythmMaker,
+        "https://github.com/vixu8/112-term-project"
       )}
 
       <hr />
@@ -61,8 +60,8 @@ class Home extends React.Component {
         "12/2024",
         "Hack112 F24: Stopdot",
         "A simple platformer game engine, made in 24 hours.",
-        "https://github.com/vixu8/hack112",
-        stopdot
+        stopdot,
+        "https://github.com/vixu8/hack112"
       )}
 
       <hr />
@@ -91,4 +90,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default Home;
