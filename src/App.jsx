@@ -2,7 +2,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import NavBar from './NavBar';
 // import Projects from './Projects';
 // import Play from './Play';
-// import About from './About';
+import About from './About';
 import Home from './Home';
 
 
@@ -17,9 +17,7 @@ return (
             <Route path="/play">
                 {/* <Play /> */}
             </Route>
-            <Route path="/about">
-                {/* <About /> */}
-            </Route>
+            <Route path="/about" element={<About/>} />
             <Route path="/" element={<Home />} />
         </Routes>
     </BrowserRouter>
