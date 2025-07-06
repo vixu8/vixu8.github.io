@@ -3,6 +3,16 @@
   height: 90vh;
 }
 
+.about-section {
+  margin: 0;
+  padding: 20px 200px;
+  background-color: rgb(16, 16, 16);
+  .big-text {
+    font-weight: 300;
+    font-size: 24px;
+  }
+}
+
 .recent-projects-section {
   background-image: linear-gradient(rgb(16, 16, 16), black);
 

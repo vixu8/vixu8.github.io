@@ -41,6 +41,22 @@ class Home extends React.Component {
     );
   }
 
+  about = (
+    <div className="section about-section">
+      <h2 className="big-text">
+        I'm Viola, a Computer Science student at Carnegie Mellon with a Machine
+        Learning concentration.
+      </h2>
+      <h2 className="big-text">
+        I'm passionate about using code to solve real-world problems, and aim to
+        tackle issues in robotics and computational biology with efficient and
+        scalable solutions.
+      </h2>
+    </div>
+  );
+
+  timeline = (<></>);
+
   recentProjects = (
     <div className="section recent-projects-section">
       <h1 className="section-title">RECENT PROJECTS</h1>
@@ -83,7 +99,9 @@ class Home extends React.Component {
     return (
       <div>
         <GlobeMover />
-        {this.recentProjects}
+        {this.about}
+        {this.timeline}
+        {/* {this.recentProjects} */}
         {/* <Footer /> */}
       </div>
     );
