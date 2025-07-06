@@ -1,0 +1,27 @@
+.about-section {
+  display: flex;
+  margin: 2rem 50px;
+
+  .text {
+    flex: 1;
+    padding-right: 2rem;
+    text-align: left;
+
+    .big-text {
+       font-weight: 500;
+       font-size: 24px;
+    }
+
+    .small-text {
+        font-size: 16px;
+    }
+  }
+
+  .image-div {
+    flex: 1;
+    .image {
+      width: 80%;
+      border-radius: 8px;
+    }
+  }
+}

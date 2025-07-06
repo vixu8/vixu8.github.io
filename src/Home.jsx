@@ -31,7 +31,7 @@ class Home extends React.Component {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="link"
+              className="popout-link"
             >
               <img src={popoutArrow} alt={"View Project Page"} />
             </a>
