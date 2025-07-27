@@ -47,7 +47,7 @@ class Home extends React.Component {
         I'm Viola, a sophomore studying Computer Science at Carnegie Mellon with
         a Machine Learning concentration.
       </h2> */}
-      <h2 className="big-text">
+      <h2 className="medium-text">
         Programmer passionate about solving real-world problems through
         scalable, efficient code.
       </h2>
