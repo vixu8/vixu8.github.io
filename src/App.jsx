@@ -7,7 +7,7 @@ import Home from "./Home";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavBar />
       <Routes>
         {/* <Route path="/projects" element={<Projects />}></Route> */}
@@ -15,7 +15,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
