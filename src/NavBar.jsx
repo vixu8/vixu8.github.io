@@ -1,5 +1,6 @@
 import React from "react";
 import darkFancy from "../public/darkFancy.png";
+import { Link } from "react-router-dom";
 
 class NavBar extends React.Component {
   render() {
@@ -47,9 +48,9 @@ class NavBar extends React.Component {
             </a>
           </li> */}
           <li style={{ flex: "1" }}>
-            <a href="/about" style={{ color: "#fff", lineHeight: "60px" }}>
+            <Link to="/about" style={{ color: "#fff", lineHeight: "60px" }}>
               ABOUT
-            </a>
+            </Link>
           </li>
           <li style={{ flex: "1" }}>
             <a
