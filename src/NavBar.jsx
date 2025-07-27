@@ -1,8 +1,5 @@
 import React from "react";
 import darkFancy from "../public/darkFancy.png";
-// import darkFancy from '../public/darkFancy.png'
-// import darkFancy from '../public/darkFancy.png'
-// import darkFancy from '../public/darkFancy.png'
 
 class NavBar extends React.Component {
   render() {
@@ -34,7 +31,7 @@ class NavBar extends React.Component {
               />
             </a>
           </li>
-          {/* <li style={{ flex: "1" }}>
+          <li style={{ flex: "1" }}>
             <a
               href="https://github.com/vixu8"
               style={{ color: "#fff", lineHeight: "60px" }}
@@ -43,12 +40,12 @@ class NavBar extends React.Component {
             >
               PROJECTS
             </a>
-          </li> */}
-          <li style={{ flex: "1" }}>
+          </li>
+          {/* <li style={{ flex: "1" }}>
             <a href="/projects" style={{ color: "#fff", lineHeight: "60px" }}>
               PROJECTS
             </a>
-          </li>
+          </li> */}
           <li style={{ flex: "1" }}>
             <a href="/about" style={{ color: "#fff", lineHeight: "60px" }}>
               ABOUT
