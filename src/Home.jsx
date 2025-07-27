@@ -43,14 +43,13 @@ class Home extends React.Component {
 
   about = (
     <div className="section about-section">
+      {/* <h2 className="big-text">
+        I'm Viola, a sophomore studying Computer Science at Carnegie Mellon with
+        a Machine Learning concentration.
+      </h2> */}
       <h2 className="big-text">
-        I'm Viola, a Computer Science student at Carnegie Mellon with a Machine
-        Learning concentration.
-      </h2>
-      <h2 className="big-text">
-        I'm passionate about using code to solve real-world problems, and aim to
-        tackle issues in robotics and computational biology with efficient and
-        scalable solutions.
+        Programmer passionate about solving real-world problems through
+        scalable, efficient code.
       </h2>
     </div>
   );
@@ -101,7 +100,7 @@ class Home extends React.Component {
         <GlobeMover />
         {this.about}
         {this.timeline}
-        {/* {this.recentProjects} */}
+        {this.recentProjects}
         {/* <Footer /> */}
       </div>
     );

@@ -20,6 +20,7 @@ class NavBar extends React.Component {
             display: "flex",
             listStyle: "none",
             margin: 0,
+            marginLeft: "50px",
             padding: 0,
             height: "inherit",
           }}
@@ -53,7 +54,7 @@ class NavBar extends React.Component {
           </li>
           <li style={{ flex: "1" }}>
             <a
-              href="https://drive.google.com/file/d/11WTMr663LAnXoa2eGh9ZGmYsF2OYavYR/view?usp=sharing"
+              href="https://drive.google.com/file/d/10Ub5LRSzZo7aDcFn4P6atpLbbKQgCRXy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{
