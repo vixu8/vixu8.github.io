@@ -1,7 +1,7 @@
 import "./App.scss";
 import "./About.scss";
 import React from "react";
-import vxu from "./assets/VXu.JPG";
+import vxu from "./assets/VXu.png";
 
 class About extends React.Component {
   render() {
@@ -14,9 +14,8 @@ class About extends React.Component {
         <div className="about-section">
           <div className="text">
             <h2 className="big-text">
-              I'm Viola Xu, a sophomore at Carnegie Mellon University.
-              I'm majoring in CS, with a concentration in Machine
-              Learning.
+              I'm Viola Xu, a sophomore at Carnegie Mellon University. I'm
+              majoring in CS, with a concentration in Machine Learning.
             </h2>
             <p className="small-text">
               I currently work for{" "}
