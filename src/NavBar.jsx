@@ -1,69 +1,41 @@
 import React from "react";
 import darkFancy from "../public/darkFancy.png";
 import { Link } from "react-router-dom";
+import "./NavBar.scss";
+import popoutArrow from "./assets/arrow.svg";
 
 class NavBar extends React.Component {
   render() {
     return (
-      <nav
-        style={{
-          background: "#000",
-          color: "#fff",
-          height: "60px",
-          borderBottom: "1px solid white",
-        }}
-      >
-        <ul
-          style={{
-            display: "flex",
-            listStyle: "none",
-            margin: 0,
-            marginLeft: "50px",
-            padding: 0,
-            height: "inherit",
-          }}
-        >
-          <li style={{ flex: "0" }}>
-            <a href="/">
-              <img
-                src={darkFancy}
-                alt={"logo"}
-                style={{ height: "100%", width: "auto" }}
-              />
-            </a>
-          </li>
-          <li style={{ flex: "1" }}>
+      <nav className="navbackground">
+        <a href="/" className="logo">
+          <img src={darkFancy} alt={"logo"} />
+        </a>
+        <ul className="navbar">
+          {/* <li className="navitem">
             <a
               href="https://github.com/vixu8"
-              style={{ color: "#fff", lineHeight: "60px" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               PROJECTS
             </a>
-          </li>
-          {/* <li style={{ flex: "1" }}>
-            <a href="/projects" style={{ color: "#fff", lineHeight: "60px" }}>
-              PROJECTS
-            </a>
           </li> */}
-          <li style={{ flex: "1" }}>
-            <Link to="/about" style={{ color: "#fff", lineHeight: "60px" }}>
-              ABOUT
-            </Link>
+          <li className="navitem">
+            <Link to="/projects">PROJECTS</Link>
           </li>
-          <li style={{ flex: "1" }}>
+          <li className="navitem">
+            <Link to="/about">ABOUT</Link>
+          </li>
+          <li className="navitem">
             <a
               href="https://drive.google.com/file/d/10Ub5LRSzZo7aDcFn4P6atpLbbKQgCRXy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                color: "#fff",
-                textDecoration: "underline",
-                lineHeight: "60px",
-              }}
+              className="resume"
             >
               RESUME
+              <img className="resume-popout-icon" src={popoutArrow} alt={""} />
             </a>
           </li>
         </ul>

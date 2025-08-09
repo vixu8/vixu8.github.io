@@ -42,7 +42,7 @@ class Home extends React.Component {
   }
 
   about = (
-    <div className="section about-section">
+    <div className="section home-about-section">
       {/* <h2 className="big-text">
         I'm Viola, a sophomore studying Computer Science at Carnegie Mellon with
         a Machine Learning concentration.

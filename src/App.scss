@@ -1,6 +1,6 @@
 #root {
   width: 100vw;
-  height:100vh;
+  height: 100vh;
   background: #101010;
   box-sizing: border-box;
   margin: 0 auto;
@@ -10,11 +10,16 @@
 
 hr {
   border: 0;
-  clear:both;
-  display:block;
-  width: 100%;               
-  background-color:#bcbcbc;
+  clear: both;
+  display: block;
+  width: 100%;
+  background-color: #bcbcbc;
   height: 1px;
+}
+
+.full-page {
+  background-image: linear-gradient(rgb(16, 16, 16), black);
+  min-height: 85vh;
 }
 
 .section {

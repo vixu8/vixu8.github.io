@@ -6,7 +6,7 @@ import vxu from "./assets/VXu.png";
 class About extends React.Component {
   render() {
     return (
-      <div className="section">
+      <div className="section full-page">
         <h1 className="section-title">ABOUT</h1>
 
         <hr />
