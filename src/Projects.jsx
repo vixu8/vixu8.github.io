@@ -1,50 +1,32 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import popoutArrow from "./assets/arrow.svg";
 import "./App.scss";
 import "./Projects.scss";
 
-class Projects extends React.Component {
-  projects = [
-    {
-      id: "project1",
-      title: "Project One",
-      description: "A short description of Project One.",
-    },
-    {
-      id: "project2",
-      title: "Project Two",
-      description: "A short description of Project Two.",
-    },
-    {
-      id: "project3",
-      title: "Project Three",
-      description: "A short description of Project Three.",
-    },
-    // Add more projects as needed
-  ];
+import projects from "./constants/projects";
 
+class Projects extends React.Component {
   renderProject(project) {
     return (
       <div className="project-container">
         <div className="project-info">
           <div className="project-header">
-            <p className="date">{project.date}</p>
+            <p className="date">{project.startDate}</p>
             <p className="title">{project.title}</p>
           </div>
           <hr />
-          <div className="project-description">{project.description}</div>
+          <div className="project-description">{project.shortDescription}</div>
         </div>
 
         <div className="project-image-container">
           <img
             src={project.image ? project.image : "/darkFancy.png"}
-            alt={project.name}
+            alt={project.title}
             className="image"
           />
-          {project.link && (
+          {project.url && (
             <a
-              href={project.link}
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
               className="popout-link"
@@ -64,7 +46,7 @@ class Projects extends React.Component {
 
         <hr />
         <ul style={{ listStyle: "none", padding: 0 }}>
-          {this.projects.map((project) => this.renderProject(project))}
+          {projects.map((project) => this.renderProject(project))}
         </ul>
       </div>
     );
