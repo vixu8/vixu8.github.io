@@ -2,6 +2,7 @@ import "./App.scss";
 import "./Home.scss";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import GlobeMover from "./GlobeMover";
 import popoutArrow from "./assets/arrow.svg";
 // import rhythmMaker from "./assets/rhythmMakerDemo.png";
@@ -31,9 +32,9 @@ class Home extends React.Component {
               alt={project.title}
               className="image"
             />
-            {project.link && (
+            {project.url && (
               <a
-                href={project.link}
+                href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="popout-link"
@@ -73,14 +74,9 @@ class Home extends React.Component {
       })}
 
       <div className="recent-projects-footer">
-        <a
-          href="https://github.com/vixu8"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="recent-projects-footer-link"
-        >
+        <Link to="/projects" className="recent-projects-footer-link">
           See all projects
-        </a>
+        </Link>
       </div>
     </div>
   );

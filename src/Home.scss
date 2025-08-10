@@ -5,7 +5,7 @@
 
 .home-about-section {
   margin: 0;
-  padding: 20px 200px;
+  padding: 0px 200px;
   background-color: rgb(16, 16, 16);
   .medium-text {
     font-weight: 300;
@@ -30,12 +30,19 @@
 }
 
 .project-container {
+  padding: 10px;
+  border-radius: 25px;
   display: flex;
   margin-bottom: 24px;
   margin-top: 24px;
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2f4556;
+  }
 
   .project-info {
     flex: 1;
