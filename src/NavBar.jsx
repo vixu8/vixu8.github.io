@@ -29,7 +29,7 @@ class NavBar extends React.Component {
           </li>
           <li className="navitem">
             <a
-              href="https://drive.google.com/file/d/1CP3qshRUmeZK0Cv0Fp3MeogzaZhi5ajG/view?usp=sharing"
+              href="https://drive.google.com/file/d/1jUKOpD35V3Zn2KAnZc_WSJ7Yz_ZmuSQp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="resume"
