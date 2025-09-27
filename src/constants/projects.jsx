@@ -1,5 +1,6 @@
 import rhythmMaker from "../assets/rhythmMakerDemo.png";
 import stopdot from "../assets/stopdotDemo.png";
+import cmufence from "../assets/cmuFenceDemo.png";
 
 // export interface Project {
 //   id: number;
@@ -53,6 +54,18 @@ export const projects = [
     image: stopdot,
     url: "https://github.com/vixu8/hack112",
     tags: ["Python", "cmu-graphics", "Game Dev"],
+  },
+  {
+    id: 2,
+    title: "HackCMU F25: CMUFence",
+    startDate: "9/2025",
+    endDate: "9/2025",
+    shortDescription:
+      "Collaborative drawing canvas inspired by the tradition of the Fence.",
+    fullDescription: ``,
+    image: cmufence,
+    url: "https://github.com/cjin3/DrawCMU",
+    tags: ["React", "Firebase", "Web Dev"],
   },
 ];
 
