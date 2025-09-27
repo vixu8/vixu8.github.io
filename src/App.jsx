@@ -4,6 +4,7 @@ import Projects from "./Projects";
 // import Play from './Play';
 import About from "./About";
 import Home from "./Home";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </HashRouter>
   );
 }

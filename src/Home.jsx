@@ -8,7 +8,7 @@ import popoutArrow from "./assets/arrow.svg";
 // import rhythmMaker from "./assets/rhythmMakerDemo.png";
 // import stopdot from "./assets/stopdotDemo.png";
 
-import projects from "./constants/projects";
+import projects from "./constants/projects.jsx";
 
 class Home extends React.Component {
   renderRecentProject(project) {
@@ -65,12 +65,16 @@ class Home extends React.Component {
 
   timeline = (<></>);
 
+  projectsIDsToRender = [0, 2];
+
   recentProjects = (
     <div className="section recent-projects-section">
       <h1 className="section-title">RECENT PROJECTS</h1>
       <hr />
-      {projects.map((project) => {
-        return this.renderRecentProject(project);
+      {projects.toReversed().map((project) => {
+        return this.projectsIDsToRender.includes(project.id)
+          ? this.renderRecentProject(project)
+          : undefined;
       })}
 
       <div className="recent-projects-footer">
@@ -88,7 +92,6 @@ class Home extends React.Component {
         {this.about}
         {this.timeline}
         {this.recentProjects}
-        {/* <Footer /> */}
       </div>
     );
   }

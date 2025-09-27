@@ -3,7 +3,7 @@ import popoutArrow from "./assets/arrow.svg";
 import "./App.scss";
 import "./Projects.scss";
 
-import projects from "./constants/projects";
+import projects from "./constants/projects.jsx";
 
 class Projects extends React.Component {
   renderProject(project) {
@@ -46,7 +46,7 @@ class Projects extends React.Component {
 
         <hr />
         <ul style={{ listStyle: "none", padding: 0 }}>
-          {projects.map((project) => this.renderProject(project))}
+          {projects.toReversed().map((project) => this.renderProject(project))}
         </ul>
       </div>
     );
