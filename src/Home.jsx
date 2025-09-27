@@ -8,7 +8,7 @@ import popoutArrow from "./assets/arrow.svg";
 // import rhythmMaker from "./assets/rhythmMakerDemo.png";
 // import stopdot from "./assets/stopdotDemo.png";
 
-import projects from "./constants/projects";
+import projects from "./constants/projects.jsx";
 
 class Home extends React.Component {
   renderRecentProject(project) {

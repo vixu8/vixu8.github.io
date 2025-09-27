@@ -3,7 +3,7 @@ import popoutArrow from "./assets/arrow.svg";
 import "./App.scss";
 import "./Projects.scss";
 
-import projects from "./constants/projects";
+import projects from "./constants/projects.jsx";
 
 class Projects extends React.Component {
   renderProject(project) {

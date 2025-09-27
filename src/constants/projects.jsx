@@ -1,19 +1,19 @@
 import rhythmMaker from "../assets/rhythmMakerDemo.png";
 import stopdot from "../assets/stopdotDemo.png";
 
-export interface Project {
-  id: number;
-  title: string;
-  startDate: string;
-  endDate?: string;
-  shortDescription: string;
-  fullDescription: string;
-  image?: any;
-  url?: string;
-  tags?: string[];
-}
+// export interface Project {
+//   id: number;
+//   title: string;
+//   startDate: string;
+//   endDate?: string;
+//   shortDescription: string;
+//   fullDescription: string;
+//   image?: any;
+//   url?: string;
+//   tags?: string[];
+// }
 
-export const projects: Project[] = [
+export const projects = [
   {
     id: 0,
     title: "15-112 Term Project: Rhythm Maker",

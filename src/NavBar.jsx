@@ -3,6 +3,7 @@ import darkFancy from "../public/darkFancy.png";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
 import popoutArrow from "./assets/arrow.svg";
+import resume from "./constants/links.jsx";
 
 class NavBar extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class NavBar extends React.Component {
           </li>
           <li className="navitem">
             <a
-              href="https://drive.google.com/file/d/1jUKOpD35V3Zn2KAnZc_WSJ7Yz_ZmuSQp/view?usp=sharing"
+              href={resume}
               target="_blank"
               rel="noopener noreferrer"
               className="resume"
