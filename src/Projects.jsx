@@ -15,6 +15,17 @@ class Projects extends React.Component {
             <p className="title">{project.title}</p>
           </div>
           <hr />
+
+          <div className="tags">
+            {project.tags.map((tag) => {
+              return (
+                <div className="tag">
+                  <span className="tag-label">{tag}</span>
+                </div>
+              );
+            })}
+          </div>
+
           <div className="project-description">{project.shortDescription}</div>
         </div>
 

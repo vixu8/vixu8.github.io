@@ -65,7 +65,7 @@ export const projects = [
     fullDescription: ``,
     image: cmufence,
     url: "https://github.com/cjin3/DrawCMU",
-    tags: ["React", "Firebase", "Web Dev"],
+    tags: ["React.js", "Firebase", "Web Dev"],
   },
 ];
 

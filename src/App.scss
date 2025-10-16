@@ -25,8 +25,8 @@ hr {
 .section {
   display: flex;
   flex-flow: column;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-left: 20vw;
+  padding-right: 20vw;
   padding-top: 30px;
 
   .section-title {
@@ -34,5 +34,15 @@ hr {
     font-size: 2.6em;
     text-align: left;
     margin-bottom: 10px;
+  }
+}
+
+a {
+  color: #fff;
+  margin: 0 0.5rem;
+  text-decoration: none;
+
+  &:hover {
+    color: #80b9e4;
   }
 }
