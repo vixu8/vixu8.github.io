@@ -3,13 +3,12 @@
   color: white;
   height: 60px;
   border-bottom: 1px solid white;
-  //   display: flex;
+  padding: 0 22vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .logo {
-    position: absolute;
-    top: 0px;
-    left: 50px;
-
     img {
       height: 60px;
     }
@@ -19,16 +18,14 @@
     display: flex;
     list-style: none;
     margin: 0;
-
-    margin-left: 15vw;
     padding: 0;
     height: inherit;
+    gap: 30px;
 
     .navitem {
-      flex: 1;
-
       a {
         line-height: 60px;
+        font-size: 1.1em;
       }
 
       .resume {
