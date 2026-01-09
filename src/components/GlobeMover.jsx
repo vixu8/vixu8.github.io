@@ -2,13 +2,14 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";
 import React from "react";
-import africa from "./assets/africa2.png";
-import pacific from "./assets/pacific2.png";
-import north from "./assets/north2.png";
-import antarctica from "./assets/antarctica2.png";
-import america from "./assets/america2.png";
-import asia from "./assets/asia2.png";
-import gradient from "./assets/gradient.png";
+import africa from "../assets/africa2.png";
+import pacific from "../assets/pacific2.png";
+import north from "../assets/north2.png";
+import antarctica from "../assets/antarctica2.png";
+import america from "../assets/america2.png";
+import asia from "../assets/asia2.png";
+import gradient from "../assets/gradient.png";
+import "./GlobeMover.scss";
 
 const loader = new THREE.TextureLoader();
 
@@ -123,18 +124,25 @@ function Lights() {
   );
 }
 
+const DESKTOP_RATIO = 0.6;
+const MOBILE_RATIO = 1;
+
 class GlobeMover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      aspect: window.innerWidth / (0.75 * window.innerHeight),
+      aspect:
+        (window.innerWidth < 768 ? MOBILE_RATIO : DESKTOP_RATIO) *
+        (window.innerWidth / window.innerHeight),
     };
     this.handleResize = this.handleResize.bind(this);
   }
 
   handleResize() {
     this.setState({
-      aspect: window.innerWidth / (0.75 * window.innerHeight),
+      aspect:
+        (window.innerWidth < 768 ? MOBILE_RATIO : DESKTOP_RATIO) *
+        (window.innerWidth / window.innerHeight),
     });
   }
 
@@ -151,41 +159,13 @@ class GlobeMover extends React.Component {
     const { aspect } = this.state;
 
     return (
-      <>
-        <div
-          style={{
-            position: "absolute",
-            marginTop: "25vh",
-            marginLeft: "30vw",
-            zIndex: "2",
-          }}
-        >
-          <h1 style={{ marginBottom: "10px", fontWeight: "300" }}>Viola Xu</h1>
-          <h3
-            style={{
-              marginTop: "0px",
-              marginBottom: "0px",
-              whitespace: "pre-wrap",
-              fontWeight: "300",
-            }}
-          >
-            Computer Science
-          </h3>
-          <h3 style={{ marginTop: "0px", fontWeight: "300" }}>
-            {" "}
-            @ Carnegie Mellon
-          </h3>
+      <div className="home-container">
+        <div className="intro-text">
+          <h1 className="name">Viola Xu</h1>
+          <h3 className="cs">Computer Science</h3>
+          <h3 className="cmu"> @ Carnegie Mellon</h3>
         </div>
-        <img
-          src={gradient}
-          alt={""}
-          style={{
-            position: "absolute",
-            marginLeft: "-20vw",
-            marginTop: "10vh",
-            width: "40vw",
-          }}
-        />
+        <img src={gradient} alt={""} className="background-glow-img" />
         <div id="canvas-container">
           <Canvas
             key={aspect}
@@ -204,7 +184,7 @@ class GlobeMover extends React.Component {
             <Globe />
           </Canvas>
         </div>
-      </>
+      </div>
     );
   }
 }

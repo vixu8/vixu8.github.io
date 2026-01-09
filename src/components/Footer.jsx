@@ -1,5 +1,4 @@
-import React from "react";
-import { github, email, linkedin } from "./constants/links.jsx";
+import { github, email, linkedin } from "../constants/links.jsx";
 import "./Footer.scss";
 
 const Footer = () => (

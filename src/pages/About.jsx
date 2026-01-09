@@ -1,7 +1,7 @@
-import "./App.scss";
+import "../App.scss";
 import "./About.scss";
 import React from "react";
-import vxu from "./assets/VXu.png";
+import vxu from "../assets/VXu.png";
 
 class About extends React.Component {
   render() {
