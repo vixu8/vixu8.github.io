@@ -1,7 +1,7 @@
 #root {
   width: 100vw;
   padding: 0 22vw;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   margin: 0 auto;
   text-align: center;
@@ -33,6 +33,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #141414;
 }
 
 hr {
