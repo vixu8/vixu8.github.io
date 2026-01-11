@@ -2,7 +2,6 @@ import React from "react";
 import darkFancy from "../../public/darkFancy.png";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
-import popoutArrow from "../assets/arrow.svg";
 import resume from "../constants/links.jsx";
 
 class NavBar extends React.Component {
@@ -61,7 +60,36 @@ class NavBar extends React.Component {
               onClick={this.closeMenu}
             >
               RESUME
-              <img className="resume-popout-icon" src={popoutArrow} alt={""} />
+              <svg
+                className="resume-popout-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.3891 8.11096L8.61091 15.8891"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M16.3891 8.11096L16.7426 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M16.3891 8.11096L12.5 7.75741"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </a>
           </li>
         </ul>
