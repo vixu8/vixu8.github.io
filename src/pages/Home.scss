@@ -1,25 +1,128 @@
-.home-about-section {
-  margin: 0;
-  padding: 0px 200px;
-  background-color: rgb(16, 16, 16);
-  .medium-text {
-    font-weight: 300;
-    font-size: 22px;
-    font-style: italic;
-    line-height: 50px;
+.about-section {
+  margin: 2rem 0;
+  text-align: left;
+
+  .about-title {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .about-image-container {
+      flex-shrink: 0;
+
+      .about-image {
+        width: 12vw;
+        height: 12vw;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .about-text {
+      flex: 1;
+    }
   }
 }
 
-.recent-projects-section {
-  background-image: linear-gradient(rgb(16, 16, 16), black);
+.experience-section {
+  margin: 2rem 0;
+  text-align: left;
 
-  .recent-projects-footer {
-    margin-top: 20px;
-    text-align: center;
+  .experience-list {
+    margin-top: 1rem;
+  }
 
-    .recent-projects-footer-link {
-      font-weight: bold;
-      text-decoration: underline;
+  .experience-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .experience-header {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      gap: 0.75rem;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.expanded .experience-arrow {
+        transform: rotate(90deg);
+      }
+
+      .experience-arrow {
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+        transition: transform 0.2s ease;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .experience-title-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .experience-title {
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+        }
+
+        .experience-company {
+          font-size: 0.9rem;
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .experience-date {
+        color: #888;
+        font-size: 0.95rem;
+        text-align: right;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+    }
+
+    .experience-content {
+      margin-top: 1rem;
+      padding-left: 0.5rem;
+
+      .experience-description {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0px;
+        gap: 0.5rem;
+
+        .tag {
+          align-items: center;
+          background-color: #9e967d98;
+          border-radius: 10px;
+          padding: 4px 10px;
+          font-size: 0.95rem;
+          font-weight: 500;
+          cursor: default;
+        }
+      }
     }
   }
 }
