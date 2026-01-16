@@ -1,4 +1,4 @@
-import { github, email, linkedin } from "../constants/links.jsx";
+import { github, email, linkedin } from "../constants/links.js";
 import "./Footer.scss";
 
 const Footer = () => (

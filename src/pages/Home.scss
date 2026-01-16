@@ -103,8 +103,18 @@
     }
 
     .experience-content {
-      margin-top: 1rem;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+      margin-top: 0;
       padding-left: 0.5rem;
+
+      &.expanded {
+        max-height: 1000px;
+        opacity: 1;
+        margin-top: 1rem;
+      }
 
       .experience-description {
         margin-bottom: 1rem;

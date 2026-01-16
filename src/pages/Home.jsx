@@ -73,18 +73,20 @@ class Home extends React.Component {
                 </div>
                 <span className="experience-date">{exp.date}</span>
               </div>
-              {expandedExperience === index && (
-                <div className="experience-content">
-                  <p className="experience-description">{exp.description}</p>
-                  <div className="tags">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+              <div
+                className={`experience-content ${
+                  expandedExperience === index ? "expanded" : ""
+                }`}
+              >
+                <p className="experience-description">{exp.description}</p>
+                <div className="tags">
+                  {exp.skills.map((skill, skillIndex) => (
+                    <span key={skillIndex} className="tag">
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

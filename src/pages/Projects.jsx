@@ -2,7 +2,7 @@ import React from "react";
 import "../App.scss";
 import "./Projects.scss";
 
-import projects from "../constants/projects.jsx";
+import projects from "../constants/projects.js";
 
 class Projects extends React.Component {
   render() {

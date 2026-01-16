@@ -2,7 +2,7 @@ import React from "react";
 import darkFancy from "../../public/darkFancy.png";
 import { Link } from "react-router-dom";
 import "./NavBar.scss";
-import resume from "../constants/links.jsx";
+import resume from "../constants/links.js";
 
 class NavBar extends React.Component {
   constructor(props) {
