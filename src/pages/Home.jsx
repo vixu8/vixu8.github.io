@@ -43,7 +43,7 @@ class Home extends React.Component {
 
     return (
       <div className="section experience-section">
-        <h2 className="titleexperience-title">Experience</h2>
+        <h2 className="title experience-title">Experience</h2>
         <hr />
         <div className="experience-list">
           {experience.map((exp, index) => (
@@ -215,7 +215,7 @@ class Home extends React.Component {
     return (
       <div>
         <GlobeMover />
-        {this.renderAboutSection()}
+        {/* {this.renderAboutSection()} */}
         {this.renderExperienceSection()}
         {this.renderProjectsSection()}
       </div>
