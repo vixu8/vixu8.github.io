@@ -2,6 +2,7 @@ import "../App.scss";
 import "./Home.scss";
 
 import React from "react";
+import { Link } from "react-router-dom";
 import GlobeMover from "../components/GlobeMover.jsx";
 import vxu from "../assets/VXu.png";
 import { experience } from "../constants/experience.js";
@@ -105,12 +106,14 @@ class Home extends React.Component {
   };
 
   renderProjectsSection() {
+    const displayedProjects = projects.slice(0, 4);
+
     return (
       <div className="section projects-section">
         <h2 className="title projects-title">Projects</h2>
         <hr />
         <div className="projects-grid">
-          {projects.map((project) => (
+          {displayedProjects.map((project) => (
             <div
               key={project.id}
               className="project-card"
@@ -140,6 +143,13 @@ class Home extends React.Component {
             </div>
           ))}
         </div>
+        {projects.length > 4 && (
+          <div className="projects-see-more">
+            <Link to="/projects" className="projects-see-more-link">
+              See more projects →
+            </Link>
+          </div>
+        )}
         {this.state.selectedProject && (
           <div
             className="project-modal-overlay"

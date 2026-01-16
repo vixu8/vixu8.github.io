@@ -198,6 +198,23 @@
     }
   }
 
+  .projects-see-more {
+    margin-top: 2rem;
+    text-align: center;
+
+    .projects-see-more-link {
+      color: #80b9e4;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #a0c9f4;
+      }
+    }
+  }
+
   .project-tag {
     background-color: #9e967d98;
     border-radius: 10px;
