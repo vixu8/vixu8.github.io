@@ -5,12 +5,14 @@ import React from "react";
 import GlobeMover from "../components/GlobeMover.jsx";
 import vxu from "../assets/VXu.png";
 import { experience } from "../constants/experience.js";
+import { projects } from "../constants/projects.js";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       expandedExperience: null,
+      selectedProject: null,
     };
   }
 
@@ -22,8 +24,8 @@ class Home extends React.Component {
 
   renderAboutSection() {
     return (
-      <div className="about-section">
-        <h2 className="about-title">About</h2>
+      <div className="section about-section">
+        <h2 className="title about-title">About</h2>
         <hr />
         <div className="about-content">
           <div className="about-image-container">
@@ -39,8 +41,8 @@ class Home extends React.Component {
     const { expandedExperience } = this.state;
 
     return (
-      <div className="experience-section">
-        <h2 className="experience-title">Experience</h2>
+      <div className="section experience-section">
+        <h2 className="titleexperience-title">Experience</h2>
         <hr />
         <div className="experience-list">
           {experience.map((exp, index) => (
@@ -94,12 +96,118 @@ class Home extends React.Component {
     );
   }
 
+  openProjectModal = (project) => {
+    this.setState({ selectedProject: project });
+  };
+
+  closeProjectModal = () => {
+    this.setState({ selectedProject: null });
+  };
+
+  renderProjectsSection() {
+    return (
+      <div className="section projects-section">
+        <h2 className="title projects-title">Projects</h2>
+        <hr />
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="project-card"
+              onClick={() => this.openProjectModal(project)}
+            >
+              {project.image && (
+                <div className="project-card-image">
+                  <img src={project.image} alt={project.title} />
+                </div>
+              )}
+              <div className="project-card-content">
+                <h3 className="project-card-title">{project.title}</h3>
+                <span className="project-card-date">
+                  {project.startDate}
+                  {project.endDate && ` - ${project.endDate}`}
+                </span>
+                {project.tags && project.tags.length > 0 && (
+                  <div className="project-card-tags">
+                    {project.tags.map((tag, index) => (
+                      <span key={index} className="project-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+        {this.state.selectedProject && (
+          <div
+            className="project-modal-overlay"
+            onClick={this.closeProjectModal}
+          >
+            <div className="project-modal" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="project-modal-close"
+                onClick={this.closeProjectModal}
+              >
+                ×
+              </button>
+              {this.state.selectedProject.image && (
+                <div className="project-modal-image">
+                  <img
+                    src={this.state.selectedProject.image}
+                    alt={this.state.selectedProject.title}
+                  />
+                </div>
+              )}
+              <div className="project-modal-content">
+                <h2 className="project-modal-title">
+                  {this.state.selectedProject.title}
+                </h2>
+                <span className="project-modal-date">
+                  {this.state.selectedProject.startDate}
+                  {this.state.selectedProject.endDate &&
+                    ` - ${this.state.selectedProject.endDate}`}
+                </span>
+                <p className="project-modal-description">
+                  {this.state.selectedProject.fullDescription ||
+                    this.state.selectedProject.shortDescription}
+                </p>
+                {this.state.selectedProject.tags &&
+                  this.state.selectedProject.tags.length > 0 && (
+                    <div className="project-modal-tags">
+                      {this.state.selectedProject.tags.map((tag, index) => (
+                        <span key={index} className="project-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                {this.state.selectedProject.url && (
+                  <a
+                    href={this.state.selectedProject.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-modal-link"
+                  >
+                    View on GitHub →
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div>
         <GlobeMover />
         {this.renderAboutSection()}
         {this.renderExperienceSection()}
+        {this.renderProjectsSection()}
       </div>
     );
   }
