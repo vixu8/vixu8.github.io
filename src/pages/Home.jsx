@@ -40,7 +40,7 @@ class Home extends React.Component {
 
     return (
       <div className="experience-section">
-        <h2 className="about-title">Experience</h2>
+        <h2 className="experience-title">Experience</h2>
         <hr />
         <div className="experience-list">
           {experience.map((exp, index) => (
