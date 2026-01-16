@@ -6,17 +6,15 @@ import vxu from "../assets/VXu.png";
 class About extends React.Component {
   render() {
     return (
-      <div className="section full-page">
-        <h1 className="section-title">ABOUT</h1>
-
+      <div className="section">
+        <h2 className="title">ABOUT</h2>
         <hr />
-
-        <div className="about-section">
-          <div className="text">
-            <h2 className="big-text">
+        <div className="about">
+          <div className="about-text">
+            <h3 className="big-text">
               I'm Viola Xu, a sophomore at Carnegie Mellon University. I'm
               majoring in CS, with a concentration in Machine Learning.
-            </h2>
+            </h3>
             <p className="small-text">
               I currently work for{" "}
               <a href="https://academy.cs.cmu.edu/about">CMU CS Academy</a> as a{" "}
@@ -31,8 +29,6 @@ class About extends React.Component {
             <img src={vxu} alt="me!" className="image" />
           </div>
         </div>
-
-        {/* <Footer /> */}
       </div>
     );
   }

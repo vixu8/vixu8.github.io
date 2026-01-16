@@ -26,7 +26,7 @@ class Home extends React.Component {
   renderAboutSection() {
     return (
       <div className="section about-section">
-        <h2 className="title about-title">About</h2>
+        <h2 className="title about-title">ABOUT</h2>
         <hr />
         <div className="about-content">
           <div className="about-image-container">

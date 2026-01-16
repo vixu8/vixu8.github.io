@@ -1,0 +1,16 @@
+.about {
+  display: flex;
+
+  .about-text {
+    margin-right: 20px;
+  }
+
+  .image-div {
+    .image {
+      max-width: 15vw;
+      max-height: 15vw;
+      border-radius: 25px;
+      object-fit: cover;
+    }
+  }
+}
