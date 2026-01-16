@@ -1,10 +1,9 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
-import NavBar from "./NavBar";
-import Projects from "./Projects";
-// import Play from './Play';
-import About from "./About";
-import Home from "./Home";
-import Footer from "./Footer";
+import NavBar from "./components/NavBar";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 function App() {
   return (

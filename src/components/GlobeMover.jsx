@@ -2,17 +2,18 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef } from "react";
 import React from "react";
-import africa from "./assets/africa2.png";
-import pacific from "./assets/pacific2.png";
-import north from "./assets/north2.png";
-import antarctica from "./assets/antarctica2.png";
-import america from "./assets/america2.png";
-import asia from "./assets/asia2.png";
-import gradient from "./assets/gradient.png";
+import africa from "../assets/africa2.png";
+import pacific from "../assets/pacific2.png";
+import north from "../assets/north2.png";
+import antarctica from "../assets/antarctica2.png";
+import america from "../assets/america2.png";
+import asia from "../assets/asia2.png";
+import gradient from "../assets/gradient.png";
+import "./GlobeMover.scss";
 
 const loader = new THREE.TextureLoader();
 
-function Globe() {
+function Globe({ size = 15, position = [5, -5, 0] }) {
   const meshRef = useRef();
   const globeFaces = [
     new THREE.MeshStandardMaterial({
@@ -100,8 +101,8 @@ function Globe() {
   });
 
   return (
-    <mesh ref={meshRef} material={globeFaces} position={[5, -5, 0]}>
-      <boxGeometry args={[15, 15, 15]} />
+    <mesh ref={meshRef} material={globeFaces} position={position}>
+      <boxGeometry args={[size, size, size]} />
     </mesh>
   );
 }
@@ -123,19 +124,51 @@ function Lights() {
   );
 }
 
+const DESKTOP_RATIO = 0.6;
+const TABLET_RATIO = 0.75;
+const MOBILE_RATIO = 1;
+
 class GlobeMover extends React.Component {
   constructor(props) {
     super(props);
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const isMobile = windowWidth < 768;
+    const isTablet = windowWidth >= 768 && windowWidth < 1024;
+
     this.state = {
-      aspect: window.innerWidth / (0.75 * window.innerHeight),
+      aspect:
+        (isMobile ? MOBILE_RATIO : isTablet ? TABLET_RATIO : DESKTOP_RATIO) *
+        (windowWidth / windowHeight),
+      windowWidth,
+      windowHeight,
+      isMobile,
+      isTablet,
     };
     this.handleResize = this.handleResize.bind(this);
   }
 
   handleResize() {
-    this.setState({
-      aspect: window.innerWidth / (0.75 * window.innerHeight),
-    });
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+    }
+
+    this.resizeTimeout = setTimeout(() => {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const isMobile = windowWidth < 768;
+      const isTablet = windowWidth >= 768 && windowWidth < 1024;
+
+      this.setState({
+        aspect:
+          (isMobile ? MOBILE_RATIO : isTablet ? TABLET_RATIO : DESKTOP_RATIO) *
+          (windowWidth / windowHeight),
+        windowWidth,
+        windowHeight,
+        isMobile,
+        isTablet,
+      });
+    }, 150);
   }
 
   componentDidMount() {
@@ -144,67 +177,73 @@ class GlobeMover extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize);
+    if (this.resizeTimeout) {
+      clearTimeout(this.resizeTimeout);
+    }
+  }
+
+  getGlobeConfig() {
+    const { isMobile, isTablet } = this.state;
+
+    if (isMobile) {
+      return {
+        size: 12,
+        position: [5, -5, 0],
+        cameraPosition: [0, 5, 25],
+        viewSize: 50,
+        zoom: 1.1,
+      };
+    } else if (isTablet) {
+      return {
+        size: 14,
+        position: [5, -5, 0],
+        cameraPosition: [0, 5, 25],
+        viewSize: 55,
+        zoom: 1.2,
+      };
+    } else {
+      // Desktop
+      return {
+        size: 15,
+        position: [5, -5, 0],
+        cameraPosition: [0, 5, 25],
+        viewSize: 60,
+        zoom: 1.25,
+      };
+    }
   }
 
   render() {
-    const viewSize = 60;
     const { aspect } = this.state;
+    const globeConfig = this.getGlobeConfig();
 
     return (
-      <>
-        <div
-          style={{
-            position: "absolute",
-            marginTop: "25vh",
-            marginLeft: "30vw",
-            zIndex: "2",
-          }}
-        >
-          <h1 style={{ marginBottom: "10px", fontWeight: "300" }}>Viola Xu</h1>
-          <h3
-            style={{
-              marginTop: "0px",
-              marginBottom: "0px",
-              whitespace: "pre-wrap",
-              fontWeight: "300",
-            }}
-          >
-            Computer Science
-          </h3>
-          <h3 style={{ marginTop: "0px", fontWeight: "300" }}>
-            {" "}
-            @ Carnegie Mellon
-          </h3>
+      <div className="home-container">
+        <div className="intro-text">
+          <h1 className="name">Viola Xu</h1>
+          <h3 className="cs">Computer Science</h3>
+          <h3 className="cmu"> @ Carnegie Mellon</h3>
         </div>
-        <img
-          src={gradient}
-          alt={""}
-          style={{
-            position: "absolute",
-            marginLeft: "-20vw",
-            marginTop: "10vh",
-            width: "40vw",
-          }}
-        />
+        <img src={gradient} alt={""} className="background-glow-img" />
         <div id="canvas-container">
           <Canvas
-            key={aspect}
+            key={`${aspect}-${this.state.windowWidth}`}
             orthographic
             camera={{
-              position: [0, 5, 25],
-              left: (-aspect * viewSize) / 2,
-              right: (aspect * viewSize) / 2,
-              top: viewSize / 2,
-              bottom: -viewSize / 2,
-              zoom: 1.25,
+              position: globeConfig.cameraPosition,
+              left: (-aspect * globeConfig.viewSize) / 2,
+              right: (aspect * globeConfig.viewSize) / 2,
+              top: globeConfig.viewSize / 2,
+              bottom: -globeConfig.viewSize / 2,
+              zoom: globeConfig.zoom,
             }}
             background={loader.load(gradient)}
           >
             <Lights />
-            <Globe />
+            <Globe size={globeConfig.size} position={globeConfig.position} />
           </Canvas>
         </div>
-      </>
+      </div>
     );
   }
 }

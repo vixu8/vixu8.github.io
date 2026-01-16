@@ -1,0 +1,418 @@
+.section {
+  margin: 2rem 0;
+  text-align: left;
+  .title {
+    text-align: left;
+    margin-bottom: 0;
+    font-weight: 550;
+    font-size: 1.5rem;
+  }
+}
+
+.about-section {
+  .about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .about-image-container {
+      flex-shrink: 0;
+
+      .about-image {
+        width: 12vw;
+        height: 12vw;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    .about-text {
+      flex: 1;
+    }
+  }
+}
+
+.experience-section {
+  .experience-list {
+    margin-top: 1rem;
+  }
+
+  .experience-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .experience-header {
+      display: flex;
+      align-items: flex-start;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      gap: 0.75rem;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &.expanded .experience-arrow {
+        transform: rotate(90deg);
+      }
+
+      .experience-arrow {
+        flex-shrink: 0;
+        margin-top: 0.25rem;
+        transition: transform 0.2s ease;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .experience-title-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .experience-title {
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+        }
+
+        .experience-company {
+          font-size: 0.9rem;
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .experience-date {
+        color: #888;
+        font-size: 0.95rem;
+        text-align: right;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+    }
+
+    .experience-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+      margin-top: 0;
+      padding-left: 0.5rem;
+
+      &.expanded {
+        max-height: 1000px;
+        opacity: 1;
+        margin-top: 1rem;
+      }
+
+      .experience-description {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        text-align: left;
+        white-space: pre-wrap;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px 0px;
+        gap: 0.5rem;
+
+        .tag {
+          align-items: center;
+          background-color: #9e967d98;
+          border-radius: 10px;
+          padding: 4px 10px;
+          font-size: 0.95rem;
+          font-weight: 500;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+.projects-section {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+
+    .project-card {
+      background-color: rgba(128, 185, 228, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        transform: translateY(-4px);
+        background-color: rgba(128, 185, 228, 0.18);
+      }
+
+      .project-card-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.2);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .project-card-content {
+        padding: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .project-card-title {
+          font-size: 1.1rem;
+          font-weight: 500;
+          margin: 0;
+          text-align: left;
+        }
+
+        .project-card-date {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 0.9rem;
+          text-align: left;
+        }
+
+        .project-card-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-top: 0.25rem;
+        }
+      }
+    }
+  }
+
+  .projects-see-more {
+    margin-top: 2rem;
+    text-align: center;
+
+    .projects-see-more-link {
+      color: #80b9e4;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #a0c9f4;
+      }
+    }
+  }
+
+  .project-tag {
+    background-color: #9e967d98;
+    border-radius: 10px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: default;
+  }
+
+  .project-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 2rem;
+    animation: fadeIn 0.2s ease;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .project-modal {
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: slideUp 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .project-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 2rem;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        z-index: 10;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+
+      .project-modal-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.3);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .project-modal-content {
+        padding: 2rem;
+
+        .project-modal-title {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin: 0 0 0.5rem 0;
+          text-align: left;
+        }
+
+        .project-modal-date {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 0.95rem;
+          display: block;
+          margin-bottom: 1.5rem;
+          text-align: left;
+        }
+
+        .project-modal-description {
+          line-height: 1.7;
+          margin-bottom: 1.5rem;
+          text-align: left;
+          white-space: pre-line;
+        }
+
+        .project-modal-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .project-modal-link {
+          display: inline-block;
+          color: #80b9e4;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: #a0c9f4;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 1.5rem 1rem;
+
+    .about-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+
+      .about-image-container {
+        .about-image {
+          width: 40vw;
+          height: 40vw;
+          min-width: 140px;
+          min-height: 140px;
+        }
+      }
+    }
+  }
+
+  .experience-section {
+    padding: 1.5rem 1.25rem;
+
+    .experience-header {
+      flex-wrap: wrap;
+
+      .experience-date {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+
+  .projects-section {
+    padding: 1.5rem 1rem;
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-modal-overlay {
+      padding: 1rem;
+
+      .project-modal {
+        max-height: 95vh;
+
+        .project-modal-image {
+          height: 200px;
+        }
+
+        .project-modal-content {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+}
