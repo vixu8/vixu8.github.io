@@ -1,6 +1,7 @@
 import rhythmMaker from "../assets/rhythmMakerDemo.png";
 import stopdot from "../assets/stopdotDemo.png";
 import cmufence from "../assets/cmuFenceDemo.png";
+import spotifyGradient from "../assets/spotifyGradient.png";
 
 // export interface Project {
 //   id: number;
@@ -66,6 +67,25 @@ export const projects = [
     image: cmufence,
     url: "https://github.com/cjin3/DrawCMU",
     tags: ["React.js", "Firebase", "Web Dev"],
+  },
+  {
+    id: 3,
+    title: "Spotify Graddient",
+    startDate: "12/2025",
+    endDate: "",
+    shortDescription:
+      "Personal project; creates a color gradient playlist between two selected songs.",
+    // fullDescription: ``,
+    image: spotifyGradient,
+    url: "https://github.com/vixu8/gradient-for-spotify",
+    tags: [
+      "React.js",
+      "Vite",
+      "Express",
+      "JavaScript",
+      "Spotify API",
+      "Last.fm API",
+    ],
   },
 ];
 
