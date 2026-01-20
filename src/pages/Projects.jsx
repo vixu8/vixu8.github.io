@@ -26,7 +26,7 @@ class Projects extends React.Component {
         <h2 className="title projects-title">Projects</h2>
         <hr />
         <div className="projects-grid">
-          {projects.map((project) => (
+          {projects.reverse().map((project) => (
             <div
               key={project.id}
               className="project-card"

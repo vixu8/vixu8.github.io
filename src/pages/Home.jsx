@@ -113,7 +113,7 @@ class Home extends React.Component {
         <h2 className="title projects-title">Projects</h2>
         <hr />
         <div className="projects-grid">
-          {displayedProjects.map((project) => (
+          {displayedProjects.reverse().map((project) => (
             <div
               key={project.id}
               className="project-card"
