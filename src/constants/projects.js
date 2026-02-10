@@ -1,3 +1,5 @@
+import darkFancy from "../../public/darkFancy.png";
+
 import rhythmMaker from "../assets/rhythmMakerDemo.png";
 import stopdot from "../assets/stopdotDemo.png";
 import cmufence from "../assets/cmuFenceDemo.png";
@@ -70,7 +72,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Spotify Graddient",
+    title: "Spotify Gradient",
     startDate: "12/2025",
     endDate: "",
     shortDescription:
@@ -86,6 +88,18 @@ export const projects = [
       "Spotify API",
       "Last.fm API",
     ],
+  },
+  {
+    id: 4,
+    title: "TartanHacks S26: SustainaTree",
+    startDate: "2/2026",
+    endDate: "",
+    shortDescription:
+      "Mobile app to promote sustainability and eco-awareness. Cultivate your own tree with environmentally-friendly actions.",
+    // fullDescription: ``,
+    image: darkFancy,
+    url: "https://github.com/vixu8/tartanhacks-26",
+    tags: ["React Native", "Expo", "Firebase", "Firestore"],
   },
 ];
 

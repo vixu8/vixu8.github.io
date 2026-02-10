@@ -106,7 +106,7 @@ class Home extends React.Component {
   };
 
   renderProjectsSection() {
-    const displayedProjects = projects.slice(0, 4);
+    const displayedProjects = projects.slice(1, 5);
 
     return (
       <div className="section projects-section">

@@ -14,3 +14,21 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+
+    .about-text {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    .image-div {
+      .image {
+        max-width: 50vw;
+        max-height: 50vw;
+      }
+    }
+  }
+}

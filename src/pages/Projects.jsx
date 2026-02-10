@@ -56,13 +56,6 @@ class Projects extends React.Component {
             </div>
           ))}
         </div>
-        {projects.length > 4 && (
-          <div className="projects-see-more">
-            <Link to="/projects" className="projects-see-more-link">
-              See more projects →
-            </Link>
-          </div>
-        )}
         {this.state.selectedProject && (
           <div
             className="project-modal-overlay"

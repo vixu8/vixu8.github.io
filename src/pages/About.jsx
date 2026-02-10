@@ -7,7 +7,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="section">
-        <h2 className="title">ABOUT</h2>
+        <h2 className="title">About</h2>
         <hr />
         <div className="about">
           <div className="about-text">
