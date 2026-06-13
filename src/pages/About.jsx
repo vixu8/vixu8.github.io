@@ -12,16 +12,12 @@ class About extends React.Component {
         <div className="about">
           <div className="about-text">
             <h3 className="big-text">
-              I'm Viola Xu, a sophomore at Carnegie Mellon University. I'm
-              majoring in CS, with a concentration in Machine Learning.
+              I'm Viola Xu, a junior at Carnegie Mellon University. I'm majoring
+              in CS, with a concentration in Machine Learning.
             </h3>
             <p className="small-text">
-              I currently work for{" "}
-              <a href="https://academy.cs.cmu.edu/about">CMU CS Academy</a> as a{" "}
-              <b>software development intern</b>, bringing free, high-quality
-              computer science education to over 500k teachers and students
-              around the world. My academic interests, besides ML and EdTech,
-              include computational biology and robotics.
+              I'm currently interning at Amazon Stores for Summer 2026. I've
+              previously worked for CMU CS Academy and Carnegie Mellon Racing.
               {/* In my free time, I crochet and play guitar. Check out some of my work <a link="https://youtube.com">here</a>! */}
             </p>
           </div>

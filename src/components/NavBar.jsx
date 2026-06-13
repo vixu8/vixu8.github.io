@@ -46,11 +46,11 @@ class NavBar extends React.Component {
               PROJECTS
             </Link>
           </li>
-          <li className="navitem">
+          {/* <li className="navitem">
             <Link to="/about" onClick={this.closeMenu}>
               ABOUT
             </Link>
-          </li>
+          </li> */}
           <li className="navitem">
             <a
               href={resume}
