@@ -4,7 +4,7 @@ import "./Home.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 import GlobeMover from "../components/GlobeMover.jsx";
-import vxu from "../assets/VXu.png";
+import vxu from "../assets/vxu.jpg";
 import { experience } from "../constants/experience.js";
 import { projects } from "../constants/projects.js";
 
