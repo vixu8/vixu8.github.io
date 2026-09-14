@@ -62,10 +62,18 @@
 .home-container {
   position: relative;
   width: 100%;
+  max-width: 56vw;
+  margin: 0 auto;
   height: 100vh;
   max-height: 85vh;
   overflow: hidden;
   min-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    max-width: 100%;
+  }
 }
 
 // Large screens (desktop)

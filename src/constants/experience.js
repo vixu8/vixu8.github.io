@@ -2,16 +2,19 @@ export const experience = [
   {
     company: "Amazon",
     title: "Software Development Engineer Intern",
-    date: "May 2026 - Present",
-    description: `• Working on project for AI document verification`,
-    skills: ["AWS Lambda", "AgentCore", "Python", "Open Policy Agent"],
+    date: "May 2026 - August 2026",
+    description: `• Built Python rule engine on Open Policy Agent for AI-driven compliance verification service projected to cut wait times from 24 hours to seconds; enabled extensibility for new compliance usecases
+• Cut ruleset edit-to-deploy time from 2 hours to seconds with hot-reloading via S3 bundle polling
+• Authored technical design doc specifying architecture & end-to-end integration with existing systems
+• Designed service build pipeline & packages, defined cloud infrastructure via AWS CDK (ECS, S3)`,
+    skills: ["AWS ECS", "AgentCore", "Python", "Open Policy Agent"],
   },
   {
     company: "CMU Computer Science Department",
     title: "15-210 TA",
-    date: "August 2026 -",
-    description: `• Incoming TA for 15-210: Parallel and Sequential Data Structures and Algorithms`,
-    skills: [],
+    date: "August 2026 - Present",
+    description: `• Teaching Assistant for 15-210: Parallel and Sequential Data Structures and Algorithms`,
+    skills: ["Data Structures & Algorithms", "SML"],
   },
   {
     company: "CMU CS Academy",

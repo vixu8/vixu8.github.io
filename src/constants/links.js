@@ -1,5 +1,5 @@
 export const resume =
-  "https://drive.google.com/file/d/1k4Lwq-6pMgjnkKzgUh0WCvGmyLjHzWsW/view?usp=sharing";
+  "https://drive.google.com/file/d/10TrnqcVu3jOUvkVkRy0TMlPBbhp11TS8/view?usp=sharing";
 export const github = "https://github.com/vixu8";
 export const email = "viola.r.xu@gmail.com";
 export const linkedin = "https://www.linkedin.com/in/vixu8/";
