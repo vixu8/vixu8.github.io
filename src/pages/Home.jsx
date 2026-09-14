@@ -106,14 +106,14 @@ class Home extends React.Component {
   };
 
   renderProjectsSection() {
-    const displayedProjects = projects.slice(1, 5);
+    const DISPLAYED_PROJECTS = projects.slice(2, 6);
 
     return (
       <div className="section projects-section">
         <h2 className="title projects-title">Projects</h2>
         <hr />
         <div className="projects-grid">
-          {displayedProjects.reverse().map((project) => (
+          {DISPLAYED_PROJECTS.reverse().map((project) => (
             <div
               key={project.id}
               className="project-card"

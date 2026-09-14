@@ -4,6 +4,8 @@ import rhythmMaker from "../assets/rhythmMakerDemo.png";
 import stopdot from "../assets/stopdotDemo.png";
 import cmufence from "../assets/cmuFenceDemo.png";
 import spotifyGradient from "../assets/spotifyGradient.png";
+import tree from "../assets/tree.png";
+import eventsai from "../assets/eventsai.png";
 
 // export interface Project {
 //   id: number;
@@ -97,9 +99,21 @@ export const projects = [
     shortDescription:
       "Mobile app to promote sustainability and eco-awareness. Cultivate your own tree with environmentally-friendly actions.",
     // fullDescription: ``,
-    image: darkFancy,
+    image: tree,
     url: "https://github.com/vixu8/tartanhacks-26",
     tags: ["React Native", "Expo", "Firebase", "Firestore"],
+  },
+  {
+    id: 5,
+    title: "HackCMU F26: Events.ai",
+    startDate: "9/2026",
+    endDate: "",
+    shortDescription:
+      "Website utilizing AI-scraping to organize personalized event meetups.",
+    // fullDescription: ``,
+    image: eventsai,
+    url: "https://github.com/wenda-huang/events.ai",
+    tags: ["Next.js", "Supabase", "Querit"],
   },
 ];
 
