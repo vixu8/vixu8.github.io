@@ -107,7 +107,30 @@ function Globe({ size = 15, position = [5, -5, 0] }) {
   );
 }
 
-function Lights() {
+function Lights({ theme }) {
+  if (theme === "light") {
+    return (
+      <>
+        <ambientLight color="rgb(255, 255, 255)" intensity={0.9} />
+        <directionalLight
+          position={[2, 9, 23]}
+          color="rgb(160, 160, 160)"
+          intensity={0.8}
+        />
+        <directionalLight
+          position={[-2, 1, 27]}
+          color="rgb(249, 246, 221)"
+          intensity={1.6}
+        />
+        <directionalLight
+          position={[-8, -4, -20]}
+          color="rgb(180, 200, 220)"
+          intensity={0.5}
+        />
+      </>
+    );
+  }
+
   return (
     <>
       <directionalLight
@@ -144,6 +167,7 @@ class GlobeMover extends React.Component {
       windowHeight,
       isMobile,
       isTablet,
+      theme: document.documentElement.getAttribute("data-theme") || "dark",
     };
     this.handleResize = this.handleResize.bind(this);
   }
@@ -173,12 +197,27 @@ class GlobeMover extends React.Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
+
+    this.themeObserver = new MutationObserver(() => {
+      const theme =
+        document.documentElement.getAttribute("data-theme") || "dark";
+      this.setState((prevState) =>
+        prevState.theme === theme ? null : { theme },
+      );
+    });
+    this.themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize);
     if (this.resizeTimeout) {
       clearTimeout(this.resizeTimeout);
+    }
+    if (this.themeObserver) {
+      this.themeObserver.disconnect();
     }
   }
 
@@ -214,7 +253,7 @@ class GlobeMover extends React.Component {
   }
 
   render() {
-    const { aspect } = this.state;
+    const { aspect, theme } = this.state;
     const globeConfig = this.getGlobeConfig();
 
     return (
@@ -239,7 +278,7 @@ class GlobeMover extends React.Component {
             }}
             background={loader.load(gradient)}
           >
-            <Lights />
+            <Lights theme={theme} />
             <Globe size={globeConfig.size} position={globeConfig.position} />
           </Canvas>
         </div>
